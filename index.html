@@ -24,10 +24,9 @@
       };
 
       recognition.onerror = function(event) {
-          textElement.innerText = '音声認識にエラーが発生しました: ' + event.error;
-          setTimeout(function() {
-              recognition.start();
-          }, 500);
+          textElement.innerText += '音声認識にエラーが発生しました: ' + event.error;
+          recognition.start();
+          toggleButton.innerText = '音声を終了';  
       };
 
 
